@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Transitions" dan "Animations" di CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>"Transitions" dan "Animations" di CSS</header>
+        <a href="#Transitions_Dasar" class="nav-link">Transitions Dasar</a>
+        <a href="#Keyframes_Animation" class="nav-link">Keyframes Animation</a>
+        <a href="#Perbedaan_Transition_dan_Animation" class="nav-link">Perbedaan Transition dan Animation</a>
+        <a href="#Timing_Functions_CSS" class="nav-link">Timing Functions CSS</a>
+        <a href="#Efek_Hover_dengan_Transition" class="nav-link">Efek Hover dengan Transition</a>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Transitions_Dasar">
+            <header>Transitions Dasar</header>
+            <p>CSS <strong>Transitions</strong> memungkinkan perubahan nilai properti CSS dilakukan secara bertahap (smooth) selama durasi waktu tertentu.</p>
+            <p>Transisi sangat berguna untuk efek hover, perubahan warna, ukuran, dan lain-lain tanpa perlu JavaScript.</p>
+            <p>Ada dua hal penting saat menggunakan transition: properti yang akan berubah, dan nilai akhirnya.</p>
+            <ul>
+            <li>transition-property</li>
+            <li>transition-duration</li>
+            <li>transition-timing-function</li>
+            <li>transition-delay</li>
+            </ul>
+            <p>Contoh shorthand untuk transition:</p>
+            <code>transition: background-color 0.3s ease-in-out;</code>
+            <p>Contoh lengkap penggunaan transition:</p>
+            <code>
+            button &#123;<br />
+            &nbsp;&nbsp;background-color: #8c5ea1;<br />
+            &nbsp;&nbsp;color: white;<br />
+            &nbsp;&nbsp;transition: background-color 0.3s ease;<br />
+            &#125;<br />
+            button:hover &#123;<br />
+            &nbsp;&nbsp;background-color: #b799d6;<br />
+            &#125;
+            </code>
+            <p>Gunakan transition untuk menciptakan efek visual yang lebih menarik dan halus pada elemen halaman webmu.</p>
+        </section>
+        <section class="main-section" id="Keyframes_Animation">
+             <header>Keyframes Animation</header>
+            <p>CSS <strong>Animations</strong> memungkinkan kita membuat efek visual kompleks menggunakan @keyframes untuk menentukan langkah-langkah animasi.</p>
+            <p>Animasi tidak butuh interaksi pengguna, bisa dimulai otomatis saat halaman dimuat.</p>
+            <ol>
+            <li>@keyframes mendefinisikan tahapan animasi</li>
+            <li>Properti animasi ditambahkan ke elemen target</li>
+            </ol>
+            <p>Properti umum dalam animasi:</p>
+            <ul>
+            <li>animation-name</li>
+            <li>animation-duration</li>
+            <li>animation-delay</li>
+            <li>animation-iteration-count</li>
+            <li>animation-direction</li>
+            </ul>
+            <p>Contoh penggunaan @keyframes dan animasi:</p>
+            <code>
+            @keyframes fadeIn &#123;<br />
+            &nbsp;&nbsp;from &#123; opacity: 0; &#125;<br />
+            &nbsp;&nbsp;to &#123; opacity: 1; &#125;<br />
+            &#125;<br />
+            .box &#123;<br />
+            &nbsp;&nbsp;animation-name: fadeIn;<br />
+            &nbsp;&nbsp;animation-duration: 2s;<br />
+            &#125;
+            </code>
+            <p>Animasi cocok untuk banner, efek masuk elemen, dan loader sederhana.</p>
+        </section>
+        <section class="main-section" id="Perbedaan_Transition_dan_Animation">
+            <header>Perbedaan Transition dan Animation</header>
+            <p>Meskipun terlihat serupa, transition dan animation memiliki perbedaan mendasar:</p>
+            <ul>
+            <li>Transition butuh interaksi pengguna, animation bisa berjalan otomatis</li>
+            <li>Transition hanya dari A ke B, animation bisa banyak tahap</li>
+            <li>Animation pakai @keyframes, transition tidak</li>
+            </ul>
+            <p>Gunakan transition untuk efek ringan dan animation untuk efek lebih kompleks.</p>
+            <code>transition: all 0.3s ease-in;</code>
+            <code>animation: slideIn 1s forwards;</code>
+        </section>
+        <section class="main-section" id="Timing_Functions_CSS">
+            <header>Timing Functions CSS</header>
+            <p>Timing function menentukan kecepatan transisi atau animasi berubah selama durasi waktu.</p>
+            <ul>
+            <li>linear - kecepatan konstan</li>
+            <li>ease - lambat di awal dan akhir</li>
+            <li>ease-in - lambat di awal</li>
+            <li>ease-out - lambat di akhir</li>
+            <li>cubic-bezier - fungsi kustom</li>
+            </ul>
+            <p>Contoh penggunaan timing function:</p>
+            <code>transition: transform 0.5s ease-in-out;</code>
+            <code>animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);</code>
+            <p>Timing yang tepat bisa membuat animasimu terasa lebih alami.</p>
+        </section>
+        <section class="main-section" id="Efek_Hover_dengan_Transition">
+            <header>Efek Hover dengan Transition</header>
+            <p>Efek hover adalah salah satu penggunaan paling umum dari CSS transition.</p>
+            <p>Contoh umum: mengubah warna tombol saat disentuh kursor.</p>
+            <code>
+            a &#123;<br />
+            &nbsp;&nbsp;color: #8c5ea1;<br />
+            &nbsp;&nbsp;transition: color 0.3s ease;<br />
+            &#125;<br />
+            a:hover &#123;<br />
+            &nbsp;&nbsp;color: #b799d6;<br />
+            &#125;
+            </code>
+            <p>Kamu juga bisa menerapkan efek pada ukuran, bayangan, rotasi, dan opacity.</p>
+            <ul>
+            <li>Efek zoom dengan transform: scale</li>
+            <li>Efek fade dengan opacity</li>
+            <li>Efek geser dengan translate</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
